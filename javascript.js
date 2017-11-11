@@ -5,7 +5,7 @@ angular.module('portalApp')
         selectedRadius : "Walkable",
     	openNow : "Yes",
     	price : "$$$$",
-    	categories : "",
+    	categories : "Happy",
     	vegetarian : "No",
     	vegan : "No",
     	moods:[
