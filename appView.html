@@ -1,24 +1,20 @@
-<script type="text/ng-template" id="loading.html">
-    <widget-row>
-        <widget-cell>
-            <div class="pDetails">
-                Loading..
-            </div>
-        </widget-cell>
-    </widget-row>
-</script>
 
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="restaurantPickerMain.html">
-	<widget-row>
-        <div class="btn-group-vertical" role="group">
-            <h2 style="margin-bottom: 15px;">What is your mood?</h2>
-            
-                    <button class="btn btn-default" ng-click="feelingLucky('restaurantPickerDetails.html')">
-                        Search for food!
-                    </button>
+        <div style="margin-bottom: 15px;">
+            <h2 style="margin-bottom: 15px;">Select your mood and search for food!</h2>
+            <select ng-model="filters.categories">
+                <option ng-repeat="x in filters.moods" value="{{x.mood}}">{{x.mood}}
+                </option>
+            </select>
         </div>
-	</widget-row>
+
+        <div class="btn-group-vertical" role="group">
+
+            <button class="btn btn-default" ng-click="feelingLucky('restaurantPickerResults.html')">
+                Search for Food!
+            </button>
+        </div>
 </script>
 
 <!-- This template gets shown when user clicks one of the items in the list -->

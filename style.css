@@ -6,12 +6,12 @@
     display: table-row;
     max-height:200px;
     max-width:300px;
-    height: 200px;
+    height: auto;
 }
 
 .image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 
 .collapseMe{
