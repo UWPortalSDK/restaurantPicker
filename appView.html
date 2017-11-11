@@ -1,0 +1,41 @@
+<script type="text/ng-template" id="loading.html">
+    <widget-row>
+        <widget-cell>
+            <div class="pDetails">
+                Loading..
+            </div>
+        </widget-cell>
+    </widget-row>
+</script>
+
+<!-- Primary template that will get shown when widget loads -->
+<script type="text/ng-template" id="restaurantPickerMain.html">
+	<widget-row>
+        <div class="btn-group-vertical" role="group">
+                    <button class="btn btn-default" ng-click="feelingLucky('restaurantPickerDetails.html')">
+                        I'm feeling lucky!
+                    </button>
+        </div>
+	</widget-row>
+</script>
+
+<!-- This template gets shown when user clicks one of the items in the list -->
+<script type="text/ng-template" id="restaurantPickerDetails.html"> 
+	<!-- OPEN DATA -->
+    <div class="collapseMe">
+        <widget-row>
+            <widget-cell>
+                <h2>Your Choices!</h2>
+            </widget-cell>
+        </widget-row>
+        <!-- using AngularJS 'limitTo' to shorten the list to 5 items -->
+        <widget-list list="item in searchData.value">
+            <widget-row>
+                <widget-cell>
+                <div class="itemName">{{item.name}}</div>
+                <div class="pDetails">{{item.location.address1}}</div>
+                </widget-cell>
+            </widget-row>
+        </widget-list>
+    </div>
+</script>
