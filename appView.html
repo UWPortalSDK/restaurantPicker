@@ -79,12 +79,13 @@
 	<!-- OPEN DATA -->
 	<div class="item" >
 		<b>{{item.value.name}}</b>
-            <hr />
+        	<hr />
 		<p>Address: {{item.value.location.address1}}</p>
         <p>{{item.value.rating}}/5 Stars out of {{item.value.review_count}} reviews on Yelp</p>
          <p>Price: {{item.value.price}}</p>
         <p>Type of Cuisine: {{item.value.categories[0].title}}</p>
         <p>Phone Number: {{item.value.display_phone}}</p>
+        	<hr />
         <div class="image-wrapper-mobile">
             <img class="image-mobile" src="{{item.value.image_url}}" alt="Image" />
  	    </div>
