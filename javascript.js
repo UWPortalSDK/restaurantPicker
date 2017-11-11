@@ -33,7 +33,7 @@ angular.module('portalApp')
 .controller('restaurantPickerCtrl', ['$scope', '$http', '$q', 'sampleOpenDataFactory', 'SharedDataService', function($scope, $http, $q, sampleOpenDataFactory, SharedDataService) {
 	
     // Set default view and variables
-    $scope.portalHelpers.showView('restaurantPickerMain.html', 1);
+    $scope.portalHelpers.showView('restaurantPickerMain.html', 2);
     $scope.loading = sampleOpenDataFactory.loading;
     $scope.searchData = sampleOpenDataFactory.searchData;
     $scope.mockData = sampleOpenDataFactory.mockData;
@@ -52,19 +52,19 @@ angular.module('portalApp')
         // if loading
         if ($scope.loading.value) {
             // show loading screen in the first column, and don't append it to browser history
-            $scope.portalHelpers.showView('loading.html', 1, false);
+            $scope.portalHelpers.showView('loading.html', 2, false);
             // show loading animation in place of menu button
             $scope.portalHelpers.toggleLoading(true);
         } else {
-            $scope.portalHelpers.showView(viewname, 1);
+            $scope.portalHelpers.showView(viewname, 2);
             $scope.portalHelpers.toggleLoading(false);
         }
     });                                                
-        $scope.portalHelpers.showView(viewname, 1);
+        $scope.portalHelpers.showView(viewname, 2);
     };
     
     $scope.changePage = function(viewname){
-    	$scope.portalHelpers.showView(viewname, 1);
+    	$scope.portalHelpers.showView(viewname, 2);
     };
     
      $scope.showDetails = function (item) {
