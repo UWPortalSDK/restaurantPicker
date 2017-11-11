@@ -66,14 +66,12 @@ function getOpenData() {
     if (vegetarian == "Yes"){
     	categories += "vegetarian,";
     }
-    
     if (radius == "Bussable"){
     	radius = "5000"; 
         range *= 3;
     }
     else{
     	radius = "2500";
-       
     }
     var randomizer = Math.floor((Math.random() * range));
 	var requestConfig = {headers: { Authorization:privateDataService.Get('Authorization')}
