@@ -37,6 +37,9 @@ angular.module('portalApp')
     $scope.loading = sampleOpenDataFactory.loading;
     $scope.searchData = sampleOpenDataFactory.searchData;
     $scope.mockData = sampleOpenDataFactory.mockData;
+    $scope.item = {
+    	value:''
+    };
     $scope.filters = SharedDataService;
 
     // Handle click to display a view
@@ -62,6 +65,13 @@ angular.module('portalApp')
     
     $scope.changePage = function(viewname){
     	$scope.portalHelpers.showView(viewname, 1);
+    };
+    
+     $scope.showDetails = function (item) {
+        // Set which item to show in the details view
+        $scope.item.value = item;
+        // Show details view in the second column
+        $scope.portalHelpers.showView('restaurantPickerDetails.html', 1);
     };
 }])
 
