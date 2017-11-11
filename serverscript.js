@@ -6,8 +6,9 @@ function getOpenData() {
     var vegetarian = args.Get("vege");
     var vegan = args.Get("v");
     var categories = "";
-    var range = 60;
-    /*switch(mood){
+    var range = 100;
+    
+    switch(mood){
         case "Thirsty":
             categories = "drinks,bubbletea,cafe,coffee";
             range = 4;
@@ -34,7 +35,7 @@ function getOpenData() {
             break;
         default:
             categories = "";
-    }*/
+    }
             
     
     if (openNow != "Yes"){
@@ -55,7 +56,7 @@ function getOpenData() {
     	price = "1,2,3";
         range = 60;
     }
-    else{
+    else {
         price = "1,2,3,4";
         range = 60;
     }
@@ -66,12 +67,13 @@ function getOpenData() {
     	categories += "vegetarian,";
     }
     
-    if (radius == "Walkable"){
-    	radius = "2000";
-    }
-    else {
-    	radius = "5000";
+    if (radius == "Bussable"){
+    	radius = "5000"; 
         range *= 3;
+    }
+    else{
+    	radius = "2500";
+       
     }
     var randomizer = Math.floor((Math.random() * range));
 	var requestConfig = {headers: { Authorization:privateDataService.Get('Authorization')}
