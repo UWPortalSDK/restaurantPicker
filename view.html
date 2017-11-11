@@ -103,11 +103,14 @@
     <widget-row>
         <widget-cell>
             <h2>{{item.value.name}}</h2>
-            <div class="pDetails">Address:{{item.value.location.address1}}</div>
+            <div class="pDetails">Address: {{item.value.location.address1}}</div>
             <div class="pDetails">{{item.value.rating}}/5 Stars out of {{item.value.review_count}} reviews on Yelp</div>
             <div class="pDetails">Price: {{item.value.price}}</div>
             <div class="pDetails">Type of Cuisine: {{item.value.categories[0].title}}</div>
             <div class="pDetails">Phone Number: {{item.value.display_phone}}</div>
+            <div class="image-wrapper">
+                        <img class="image" src="{{item.value.image_url}}" alt="Image" />
+                    </div>
         </widget-cell>
     </widget-row>
     <div class="btn-group-vertical" role="group">
