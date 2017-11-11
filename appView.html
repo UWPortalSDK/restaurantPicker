@@ -68,7 +68,8 @@
     <div class="item item-divider">Your Choices!</div>
 	<div class="item" ng-repeat="item in searchData.value" ng-click="showDetails(item)">
 		<b>{{item.name}}</b>
-		<p>{{item.location.address1}}<i class="ion-chevron-right icon" align="right"></i></p>
+		<p>{{item.location.address1}}</p>
+        <i class="ion-chevron-right icon" align="right"></i>
         <p>{{item.rating}}/5 Stars</p>
 	</div>
 </script>
