@@ -13,7 +13,14 @@
     width: 200px;
     height: 200px;
 }
+.image-wrapper-mobile {
+    display: table-row;
+    max-height:200px;
+    max-width:300px;
+    height: auto;
+}
 
-.collapseMe{
-	
+.image-mobile {
+    width: 300px;
+    height: 300px;
 }
