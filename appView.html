@@ -2,7 +2,9 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="restaurantPickerMain.html">
         <center><div style="margin-bottom: 30px;">
-            <h2 style="margin-bottom: 20px;">Select your mood and search for food!</h2>
+            <br />
+            <h2 style="margin-bottom: 20px;">Select your mood
+                <br /> &amp; <br /> search for food!</h2>
             <select ng-model="filters.categories">
                 <option ng-repeat="x in filters.moods" value="{{x.mood}}">{{x.mood}}
                 </option>
