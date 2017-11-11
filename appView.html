@@ -67,7 +67,7 @@
     <!-- OPEN DATA -->
     <div class="item item-divider">Your Choices!</div>
 	<div class="item" ng-repeat="item in item" ng-click="showDetails(item)">
-		<b>{{item.name}}</b>
+		<b>{{item.value.name}}</b>
 		<p>{{item.location.address1}}</p>
         <p>{{item.rating}}/5 Stars</p>
 	</div>
