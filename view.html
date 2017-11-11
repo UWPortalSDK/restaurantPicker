@@ -1,0 +1,102 @@
+<script type="text/ng-template" id="loading.html">
+    <widget-row>
+        <widget-cell>
+            <div class="pDetails">
+                Loading..
+            </div>
+        </widget-cell>
+    </widget-row>
+</script>
+
+<!-- Primary template that will get shown when widget loads -->
+<script type="text/ng-template" id="restaurantPickerMain.html">
+    <widget-row>
+        <div style="margin-bottom: 15px;">
+            <h2 style="margin-bottom: 15px;">What is your mood?</h2>
+            <select ng-model="filters.categories">
+                <option ng-repeat="x in filters.moods" value="{{x.mood}}">{{x.mood}}
+                </option>
+            </select>
+        </div>
+
+        <div class="btn-group-vertical" role="group">
+            <button class="btn btn-default" ng-click="feelingLucky('restaurantPickerDetails.html')">
+                I'm feeling lucky!
+            </button>
+        </div>
+    </widget-row>
+    
+     <widget-row clickable ng-click="changePage('restaurantPickerFilter.html')">
+        <widget-cell fill>Filter Search</widget-cell>
+        <widget-cell>
+            <widget-icon name="angle-right"></widget-icon>
+        </widget-cell>
+    </widget-row>
+</script>
+
+<!-- This template gets shown when user clicks one of the items in the list -->
+<script type="text/ng-template" id="restaurantPickerDetails.html">
+    <!-- OPEN DATA -->
+    <div class="collapseMe">
+        <widget-row>
+            <widget-cell>
+                <h2>Your Choices!</h2>
+            </widget-cell>
+        </widget-row>
+        <!-- using AngularJS 'limitTo' to shorten the list to 5 items -->
+        <widget-list list="item in searchData.value | limitTo:3">
+            <widget-row>
+                <widget-cell>
+                    <div class="itemName">{{item.name}}</div>
+                    <div class="pDetails">{{item.location.address1}}</div>
+                    <div class="image-wrapper">
+                        <img class="image" src="{{item.image_url}}" alt="Image" />
+                    </div>
+                </widget-cell>
+                <wc>
+                    <wi name="angle-right" />
+                </wc>
+            </widget-row>
+        </widget-list>
+    </div>
+</script>
+
+<script type="text/ng-template" id="restaurantPickerFilter.html">
+    <h1>Search Filters</h1>
+    <div class="collapseMe">
+        <widget-row>
+            <div style="margin-bottom: 15px;">
+                <p>Select a search radius:</p>
+                <select ng-model="filters.selectedRadius">
+                    <option ng-repeat="x in filters.dropDownData" value="{{x.radius}}">{{x.radius}} </option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <p>Are you vegetarian?:</p>
+                <select ng-model="filters.vegetarian">
+                    <option ng-repeat="x in filters.dropDownData" value="{{x.vegetarian}}">{{x.vegetarian}} </option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <p>Are you vegan?:</p>
+                <select ng-model="filters.vegan">
+                    <option ng-repeat="x in filters.dropDownData" value="{{x.vegan}}">{{x.vegan}} </option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <p>Select a price. ($$$$ means any price):</p>
+                <select ng-model="filters.price">
+                    <option ng-repeat="x in filters.prices" value="{{x.price}}">{{x.price}} </option>
+                </select>
+            </div>
+        </widget-row>
+    </div>
+     <div class="btn-group-vertical" role="group">
+            <button class="btn btn-default" ng-click="changePage('restaurantPickerMain.html')">
+                Back
+            </button>
+        </div>
+</script>
