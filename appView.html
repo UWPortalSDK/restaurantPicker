@@ -66,7 +66,7 @@
 <script type="text/ng-template" id="restaurantPickerResults.html">
     <!-- OPEN DATA -->
     <div class="item item-divider">Your Choices!</div>
-	<div class="item" ng-click="showDetails(item)">
+	<div class="item" ng-repeat="item in searchData.value" ng-click="showDetails(item)">
 		<b>{{item.name}}</b>
 		<p>{{item.location.address1}}</p>
         <p>{{item.rating}}/5 Stars</p>
