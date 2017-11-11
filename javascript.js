@@ -71,7 +71,7 @@ angular.module('portalApp')
         // Set which item to show in the details view
         $scope.item.value = item;
         // Show details view in the second column
-        $scope.portalHelpers.showView('restaurantPickerDetails.html', 2);
+        $scope.portalHelpers.showView('restaurantPickerDetails.html', 1);
     };
 }])
 
