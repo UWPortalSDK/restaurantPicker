@@ -2,7 +2,9 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="restaurantPickerMain.html">
         <center><div style="margin-bottom: 30px;">
-            <h2 style="margin-bottom: 20px;">Select your mood and search for food!</h2>
+            <br />
+            <h2 style="margin-bottom: 20px;">Select your mood
+                <br /> &amp; <br /> search for food!</h2>
             <select ng-model="filters.categories">
                 <option ng-repeat="x in filters.moods" value="{{x.mood}}">{{x.mood}}
                 </option>
@@ -10,14 +12,14 @@
         </div></center>
 
         <div class="btn-group-vertical" role="group">
-            <button class="btn btn-default" ng-click="feelingLucky('restaurantPickerResults.html')">
+            <center><button class="btn btn-default" ng-click="feelingLucky('restaurantPickerResults.html')">
                 Search for Food!
-            </button>
+            </button></center>
         </div>
     <div class="btn-group-vertical" role="group">
-            <button class="btn btn-default" ng-click="changePage('restaurantPickerFilter.html')">
+            <center><button class="btn btn-default" ng-click="changePage('restaurantPickerFilter.html')">
                 Advanced Filters
-            </button>
+            </button></center>
         </div>
 </script>
 

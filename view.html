@@ -11,9 +11,11 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="restaurantPickerMain.html">
     <widget-row>
-        <h2 style="margin-bottom: 20px">Food Match Maker</h2>
+        <center><h2 style="margin-bottom: 20px">Food Match Maker</h2>
         <div style="margin-bottom: 15px;">
-            <h2 style="margin-bottom: 15px;">Select your mood to search for food!</h2>
+            <br/>
+            <h2 style="margin-bottom: 15px;">Select your mood 
+                <br/>to <br/>search for food!</h2>
             <select ng-model="filters.categories">
                 <option ng-repeat="x in filters.moods" value="{{x.mood}}">{{x.mood}}
                 </option>
@@ -24,10 +26,10 @@
             <button class="btn btn-default" ng-click="feelingLucky('restaurantPickerResults.html')">
                 Search for Food!
             </button>
-        </div>
+        </div></center>
     </widget-row>
     
-     <widget-row clickable ng-click="changePage('restaurantPickerFilter.html')">
+     <widget-row clickable ng-click="changePage('restaurantPickerFilter.html')"><br />
         <widget-cell fill>Advanced Filters</widget-cell>
         <widget-cell>
             <widget-icon name="angle-right"></widget-icon>
