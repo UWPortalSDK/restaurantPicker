@@ -52,26 +52,26 @@ angular.module('portalApp')
         // if loading
         if ($scope.loading.value) {
             // show loading screen in the first column, and don't append it to browser history
-            $scope.portalHelpers.showView('loading.html', 2, false);
+            $scope.portalHelpers.showView('loading.html', 1, false);
             // show loading animation in place of menu button
             $scope.portalHelpers.toggleLoading(true);
         } else {
-            $scope.portalHelpers.showView(viewname, 2);
+            $scope.portalHelpers.showView(viewname, 1);
             $scope.portalHelpers.toggleLoading(false);
         }
     });                                                
-        $scope.portalHelpers.showView(viewname, 2);
+        $scope.portalHelpers.showView(viewname, 1);
     };
     
     $scope.changePage = function(viewname){
-    	$scope.portalHelpers.showView(viewname, 2);
+    	$scope.portalHelpers.showView(viewname, 1);
     };
     
      $scope.showDetails = function (item) {
         // Set which item to show in the details view
         $scope.item.value = item;
         // Show details view in the second column
-        $scope.portalHelpers.showView('restaurantPickerDetails.html', 1);
+        $scope.portalHelpers.showView('restaurantPickerDetails.html', 2);
     };
 }])
 
